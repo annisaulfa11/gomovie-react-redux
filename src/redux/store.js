@@ -4,6 +4,7 @@ import searchMovieReducer from "./searchMovieSlice";
 import nowPlayingReducer from "./nowPlayingSlice";
 import popularMovieSlice from "./popularMovieSlice";
 import topRatedMovieSlice from "./topRatedMovieSlice";
+import movieDetailSlice from "./movieDetailSlice";
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     nowPlaying: nowPlayingReducer,
     popularMovie: popularMovieSlice,
     topRatedMovie: topRatedMovieSlice,
+    movieDetail: movieDetailSlice,
   },
 });
 

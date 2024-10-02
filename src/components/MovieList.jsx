@@ -1,5 +1,5 @@
-// src/components/MovieList.jsx
 import { useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 
 function MovieList() {
   const { movies, status } = useSelector((state) => state.movies);
@@ -20,11 +20,16 @@ function MovieList() {
         movies.map((movie) => (
           <div key={movie.id} className="movie-card ">
             <p>{movie.release_date}</p>
+            <Link
+              key={movie.id}
+              to={`/gomovie-react-redux/movie/${movie.id}`}
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                 alt={movie.title}
                 className="rounded-md max-w-none"
               />
+              </Link>
           </div>
         ))
       ) : (

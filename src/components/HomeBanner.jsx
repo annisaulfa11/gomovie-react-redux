@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNowPlaying } from "../redux/nowPlayingSlice";
+import { Link } from "react-router-dom";
 
 export default function HomeBanner() {
   const dispatch = useDispatch();
@@ -22,9 +23,9 @@ export default function HomeBanner() {
       setCurrentIndex((prevIndex) =>
         prevIndex === nowPlaying.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000); 
+    }, 4000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [nowPlaying]);
 
   if (status === "loading") {
@@ -59,9 +60,14 @@ export default function HomeBanner() {
             <p className="font-semibold text-pretty transition-opacity duration-1000 ease-in-out">
               {currentMovie.overview}
             </p>
-            <button className=" bg-blue-600 px-5 py-2 w-fit mt-5 rounded-md font-bold">
-              Watch Now
-            </button>
+            <Link
+              key={currentMovie.id}
+              to={`/gomovie-react-redux/movie/${currentMovie.id}`}
+            >
+              <button className=" bg-blue-600 px-5 py-2 w-fit mt-5 rounded-md font-bold">
+                Watch Now
+              </button>
+            </Link>
           </div>
         </div>
         <div className="absolute bottom-5 px-36 z-0 flex justify-start space-x-3">

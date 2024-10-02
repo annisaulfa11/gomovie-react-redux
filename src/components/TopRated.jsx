@@ -99,7 +99,7 @@ export default function Popular() {
             >
               {topRatedMovie.length > 0 ? (
                 topRatedMovie.map((movie) => (
-                  <Link key={movie.id} to={`/movies/${movie.id}`}>
+                  <Link key={movie.id} to={`/gomovie-react-redux/movie/${movie.id}`}>
                     <img
                       className="rounded-md max-w-none"
                       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
