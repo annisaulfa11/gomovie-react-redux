@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/gomovie-react-redux" element={<Home />} />
           {/* <Route path="/movie/:id" element={<MovieDetails />} /> */}
-          <Route path="/search" element={<MovieList />} />
-          <Route path="/movie/:id" element={<Popular />} />
+          <Route path="/gomovie-react-redux/search" element={<MovieList />} />
+          <Route path="/gomovie-react-redux/movie/:id" element={<Popular />} />
         </Routes>
       </Layout>
     </Router>
