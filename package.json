@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://annisaulfa11.github.io/gomovie-react-redux",
+  "homepage": "https://annisaulfa11.github.io/gomovie-react-redux/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

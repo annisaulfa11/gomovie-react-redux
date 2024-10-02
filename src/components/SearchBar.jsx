@@ -13,15 +13,12 @@ function SearchBar() {
     e.preventDefault();
     if (query) {
       dispatch(fetchMovies(query));
-      navigate('/search');
+      navigate("/gomovie-react-redux/search");
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex w-full justify-end"
-    >
+    <form onSubmit={handleSubmit} className="flex w-full justify-end">
       <input
         type="text"
         placeholder="Search for movies..."

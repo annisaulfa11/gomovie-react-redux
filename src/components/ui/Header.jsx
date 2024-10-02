@@ -1,5 +1,5 @@
 import SearchBar from "../SearchBar";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function Header() {
@@ -24,23 +24,33 @@ export default function Header() {
 
   return (
     <>
-      <header className={`fixed z-50 top-0 left-0 right-0 py-3 px-12 ${bgColor}`}>
+      <header
+        className={`fixed z-50 top-0 left-0 right-0 py-3 px-12 ${bgColor}`}
+      >
         <nav className="flex w-full items-center">
           <div className="mr-20">
             <h1 className="text-2xl font-bold text-blue-500">GOMOVIE</h1>
           </div>
           <ul className="flex w-full gap-x-5 text-white">
             <li>
-              <Link to="/" className="hover:text-blue-400">Home</Link>
+              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/" className="hover:text-blue-400">Series</Link>
+              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+                Series
+              </Link>
             </li>
             <li>
-              <Link to="/" className="hover:text-blue-400">Movies</Link>
+              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+                Movies
+              </Link>
             </li>
-            <li> 
-              <Link to="/" className="hover:text-blue-400">New & Popular</Link>
+            <li>
+              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+                New & Popular
+              </Link>
             </li>
           </ul>
           <SearchBar />
