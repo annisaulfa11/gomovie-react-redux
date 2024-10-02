@@ -1,0 +1,36 @@
+/* src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.h-128 {
+  height: 500px;
+}
+
+.w-128 {
+  width: 300px;
+}
+
+.radial-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0.5, 0, 0, 0.2) 50%,
+    rgba(0.5, 0.3, 0.3, 0) 100%
+  );
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
