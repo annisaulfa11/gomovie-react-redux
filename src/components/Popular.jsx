@@ -76,17 +76,17 @@ export default function Popular() {
 
   return (
     <>
-      <div className=" bg-black px-12 py-7 overflow-y-hidden">
+      <div className=" bg-black px-12 py-7 overflow-y-hidden s:px-6 s:py-3">
         <section>
           <div>
-            <h3 className="text-3xl font-bold mb-5 text-white">
+            <h3 className="text-3xl font-bold mb-5 text-white s:text-sm">
               Popular Movies
             </h3>
             {showLeftButton && (
-              <div className="relative top-32 -left-6">
+              <div className="relative  ">
                 <button
                   onClick={scrollLeft}
-                  className="absolute bg-slate-800 py-3 px-5 rounded-full text-white"
+                  className=" absolute s:top-14 top-32 -left-6 bg-slate-800 py-3 px-5 rounded-full text-white"
                 >
                   &#10094;
                 </button>
@@ -101,7 +101,7 @@ export default function Popular() {
                 popularMovie.map((movie) => (
                   <Link key={movie.id} to={`/gomovie-react-redux/movie/${movie.id}`}>
                     <img
-                      className="rounded-md max-w-none"
+                      className="rounded-md max-w-none s:w-28"
                       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                       alt={movie.title}
                     ></img>
@@ -115,7 +115,7 @@ export default function Popular() {
               <div className="relative">
                 <button
                   onClick={scrollRight}
-                  className="absolute -right-6 -top-44 bg-slate-800 py-3 px-5 rounded-full text-white"
+                  className="s:-top-28 absolute -right-6 -top-44 bg-slate-800 py-3 px-5 rounded-full text-white"
                 >
                   &#10095;
                 </button>

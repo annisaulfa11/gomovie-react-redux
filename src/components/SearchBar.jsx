@@ -18,13 +18,13 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full justify-end">
+    <form onSubmit={handleSubmit} className="flex justify-end">
       <input
         type="text"
         placeholder="Search for movies..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="border px-4 h-9 rounded-md focus:outline-none"
+        className="border lg:px-4 lg:h-9 rounded-md focus:outline-none s:h-5 s:text-sm s:px-2 s:rounded-md s:w-fit sm:w-40 sm:h-7 lg:w-fit sm:rounded-md"
       />
     </form>
   );

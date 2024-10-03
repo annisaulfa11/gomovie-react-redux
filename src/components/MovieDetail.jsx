@@ -39,19 +39,19 @@ export default function MovieDetails() {
   const currentVideo = videos[selectedVideo];
 
   return (
-    <div className="bg-black px-12 pt-20 pb-2">
-      <div className="flex justify-between">
+    <div className="bg-black px-12 pt-20 pb-2 s:px-6 s:pt-8">
+      <div className="lg:flex justify-between s:flex-col">
         {currentVideo && (
           <iframe
             src={`https://www.youtube.com/embed/${currentVideo.key}`}
             title={currentVideo.name}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className="w-3/4 mr-10"
+            className=" lg:w-3/4 mr-10 s:w-full s:h-64 sm:w-full "
           />
         )}
 
-        <div className=" w-1/3 h-100 px-4 py-3 text-white overflow-y-scroll">
+        <div className=" lg:w-1/3 s:w-full sm:w-full h-100 px-4 py-3 text-white overflow-y-scroll">
           <h2 className="text-lg font-bold mb-3">Daftar Video</h2>
           <ul className="flex flex-col gap-y-4 ">
             {videos.map((video, index) => (
@@ -81,19 +81,22 @@ export default function MovieDetails() {
           </ul>
         </div>
       </div>
-      <div className="text-white my-5 py-5 flex bg-slate-900 px-5 ">
+      <div className="text-white my-5 py-5 bg-slate-900 px-5 s:flex-col lg:flex">
         <img
           src={`https://image.tmdb.org/t/p/w200${movieDetail.poster_path}`}
+          className="s:w-28 sm:w-36 lg:w-fit"
         ></img>
-        <div className="ml-10 text-lg flex  flex-col gap-y-3">
-          <h1 className=" text-3xl font-bold mb-5">{movieDetail.title}</h1>
+        <div className="lg:ml-10 lg:text-lg s:ml-0 s:mt-4 s:text-sm sm:ml-0 sm:mt-4 flex  flex-col gap-y-3">
+          <h1 className=" text-3xl font-bold s:text-sm mb-5 s:mb-1 ">{movieDetail.title}</h1>
           <p>{movieDetail.overview}</p>
           <p>Release Date: {movieDetail.release_date}</p>
           <p>Rating: {movieDetail.vote_average}</p>
           <p>Genre: </p>
           <div className="flex gap-x-3">
             {movieDetail.genres.map((genre) => (
-              <p key={genre.id} className="py-1 px-3 rounded-md bg-slate-600">{genre.name}</p>
+              <p key={genre.id} className="py-1 px-3 rounded-md bg-slate-600">
+                {genre.name}
+              </p>
             ))}
           </div>
         </div>

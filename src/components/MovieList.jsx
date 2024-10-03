@@ -14,8 +14,8 @@ function MovieList() {
 
   return (
     <>
-    <h2 className='text-white bg-black px-12 pt-20 text-2xl font-bold'>Results</h2>
-    <div className="flex gap-x-6  flex-wrap px-10 overflow-hidden  bg-black justify-center min-h-screen">
+    <h2 className='text-white bg-black px-12 pt-20 text-2xl font-bold s:text-sm s:px-5 s:pt-12'>Results</h2>
+    <div className="flex gap-x-6 s:gap-x-5 flex-wrap px-10 s:px-3 overflow-hidden  bg-black justify-center min-h-screen">
       {movies.length > 0 ? (
         movies.map((movie) => (
           <div key={movie.id} className="movie-card ">
@@ -27,7 +27,7 @@ function MovieList() {
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                 alt={movie.title}
-                className="rounded-md max-w-none"
+                className="rounded-md max-w-none s:w-28"
               />
               </Link>
           </div>
