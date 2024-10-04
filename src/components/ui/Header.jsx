@@ -33,7 +33,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed z-50 top-0 left-0 right-0 py-3 px-12 s:px-8 ${bgColor}`}
+        className={`fixed z-50 top-0 left-0 right-0 py-3 px-12 s:px-5 ${bgColor}`}
       >
         <nav className="flex w-full items-center justify-between">
           <div className="lg:mr-20 s:mr-5 sm:mr-10">
