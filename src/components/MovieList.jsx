@@ -2,20 +2,12 @@ import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
 function MovieList() {
-  const { movies, status } = useSelector((state) => state.movies);
-
-  if (status === 'loading') {
-    return <p>Loading...</p>;
-  }
-
-  if (status === 'failed') {
-    return <p>Failed to fetch movies</p>;
-  }
+  const { movies } = useSelector((state) => state.movies);
 
   return (
     <>
     <h2 className='text-white bg-black px-12 pt-20 text-2xl font-bold s:text-sm s:px-5 s:pt-16'>Results</h2>
-    <div className="flex gap-x-6 s:gap-x-3 flex-wrap justify-around px-10 s:px-3 overflow-hidden  bg-black justify-center min-h-screen">
+    <div className="flex gap-x-6 s:gap-x-3 flex-wrap justify-around px-10 s:px-3 overflow-hidden  bg-black min-h-screen">
       {movies.length > 0 ? (
         movies.map((movie) => (
           <div key={movie.id} className="movie-card ">

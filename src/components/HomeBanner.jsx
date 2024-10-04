@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function HomeBanner() {
   const dispatch = useDispatch();
-  const { nowPlaying, status } = useSelector((state) => state.nowPlaying);
+  const { nowPlaying } = useSelector((state) => state.nowPlaying);
 
   // Local state to keep track of the current movie index
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,14 +27,6 @@ export default function HomeBanner() {
 
     return () => clearInterval(interval);
   }, [nowPlaying]);
-
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (status === "failed") {
-    return <p>Failed to fetch movies</p>;
-  }
 
   if (nowPlaying.length === 0) {
     return <p></p>;

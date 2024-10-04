@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 export default function Popular() {
   const dispatch = useDispatch();
-  const { topRatedMovie, status } = useSelector((state) => state.topRatedMovie);
+  const { topRatedMovie } = useSelector((state) => state.topRatedMovie);
   const sliderRef = useRef();
 
   const [showLeftButton, setShowLeftButton] = useState(false);
@@ -65,14 +65,6 @@ export default function Popular() {
       }
     };
   });
-
-  if (status === "loading") {
-    return <p>Loading...</p>;
-  }
-
-  if (status === "failed") {
-    return <p>Failed to fetch movies</p>;
-  }
 
   return (
     <>
