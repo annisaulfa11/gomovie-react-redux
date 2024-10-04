@@ -24,11 +24,6 @@ export default function MovieDetails() {
     }
   }, [dispatch, id]);
 
-
-  if (!movieDetail) {
-    return <div>No movie details available</div>;
-  }
-
   const currentVideo = videos[selectedVideo];
 
   return (
@@ -44,9 +39,9 @@ export default function MovieDetails() {
           />
         )}
 
-        <div className=" lg:w-1/3 s:my-5 sm:my-5 sm:px-0 s:px-0 s:w-full sm:w-full h-100 lg:px-4 lg:py-3 lg:my-0 text-white overflow-y-scroll">
+        <div className=" lg:w-1/3 max-h-100 s:my-5 sm:my-5 sm:px-0 s:px-0 s:w-full sm:w-full lg:px-4 lg:py-3 lg:my-0 text-white overflow-y-scroll">
           <h2 className="text-lg font-bold mb-3">Daftar Video</h2>
-          <ul className="flex flex-col gap-y-4 ">
+          <ul className="flex flex-col gap-y-4">
             {videos.map((video, index) => (
               <li
                 key={video.id}

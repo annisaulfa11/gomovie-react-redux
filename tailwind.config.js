@@ -13,6 +13,9 @@ export default {
       },
       height: {
         '100' : '430px'
+      },
+      maxHeight: {
+        '100' : '430px'
       }
       
     },
