@@ -7,7 +7,7 @@ import { useState } from "react";
 export default function MovieDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { movieDetail, videos, status } = useSelector(
+  const { movieDetail, videos } = useSelector(
     (state) => state.movieDetail
   );
 
@@ -24,13 +24,6 @@ export default function MovieDetails() {
     }
   }, [dispatch, id]);
 
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  if (status === "failed") {
-    return <div>Failed to load movie details</div>;
-  }
 
   if (!movieDetail) {
     return <div>No movie details available</div>;
