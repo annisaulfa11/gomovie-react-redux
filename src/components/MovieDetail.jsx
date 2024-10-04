@@ -24,6 +24,9 @@ export default function MovieDetails() {
     }
   }, [dispatch, id]);
 
+  if (!movieDetail || !videos || videos.length === 0) {
+    return <div className="h-screen bg-black w-full"></div>;
+  }
   const currentVideo = videos[selectedVideo];
 
   return (
