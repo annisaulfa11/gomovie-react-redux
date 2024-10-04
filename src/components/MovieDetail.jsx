@@ -39,7 +39,7 @@ export default function MovieDetails() {
   const currentVideo = videos[selectedVideo];
 
   return (
-    <div className="bg-black px-12 pt-20 pb-2 s:px-6 s:pt-8">
+    <div className="bg-black px-12 pt-20 pb-2 s:px-6">
       <div className="lg:flex justify-between s:flex-col">
         {currentVideo && (
           <iframe
@@ -47,11 +47,11 @@ export default function MovieDetails() {
             title={currentVideo.name}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            className=" lg:w-3/4 mr-10 s:w-full s:h-64 sm:w-full "
+            className=" lg:w-3/4 s:w-full s:h-64 sm:w-full sm:h-96 lg:h-100 "
           />
         )}
 
-        <div className=" lg:w-1/3 s:w-full sm:w-full h-100 px-4 py-3 text-white overflow-y-scroll">
+        <div className=" lg:w-1/3 s:my-5 sm:my-5 sm:px-0 s:px-0 s:w-full sm:w-full h-100 lg:px-4 lg:py-3 lg:my-0 text-white overflow-y-scroll">
           <h2 className="text-lg font-bold mb-3">Daftar Video</h2>
           <ul className="flex flex-col gap-y-4 ">
             {videos.map((video, index) => (
@@ -92,9 +92,9 @@ export default function MovieDetails() {
           <p>Release Date: {movieDetail.release_date}</p>
           <p>Rating: {movieDetail.vote_average}</p>
           <p>Genre: </p>
-          <div className="flex gap-x-3">
+          <div className="flex-wrap flex gap-x-3 gap-y-3">
             {movieDetail.genres.map((genre) => (
-              <p key={genre.id} className="py-1 px-3 rounded-md bg-slate-600">
+              <p key={genre.id} className=" py-1 px-3 rounded-md bg-slate-600">
                 {genre.name}
               </p>
             ))}

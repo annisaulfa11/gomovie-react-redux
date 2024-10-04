@@ -6,10 +6,13 @@ export default {
   theme: {
     extend: {
       screens: {
-        's' : { 'max': '654px'}
+        's' : { 'max': '639px'}
       },
       fontSize: {
         s : '8px'
+      },
+      height: {
+        '100' : '430px'
       }
       
     },

@@ -53,7 +53,7 @@ export default function HomeBanner() {
             key={currentMovie.backdrop_path}
             onLoad={(e) => (e.target.style.opacity = 1)}
           />
-          <div className="relative flex flex-col radial-gradient h-fit lg:mx-28 justify-center s:mx-2 s:my-16 s:p-3 s:w-2/3 sm:my-20 sm:w-4/5 sm:mx-8 lg:my-32 w-1/2 p-8 text-white z-20 transition-opacity duration-700 ease-in-out">
+          <div className="relative flex flex-col radial-gradient h-fit lg:mx-28 justify-center s:mx-6 s:my-20 s:p-3 s:w-2/3 sm:my-28 sm:w-4/5 sm:mx-8 lg:my-32 w-1/2 p-8 text-white z-20 transition-opacity duration-700 ease-in-out">
             <h2 className="text-3xl font-bold mb-5 s:text-sm transition-transform duration-1000 transform ease-in-out ">
               {currentMovie.original_title}
             </h2>
@@ -70,7 +70,7 @@ export default function HomeBanner() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-5 px-36 s:pl-5 s:space-x-1 z-0 flex justify-start space-x-3">
+        <div className="absolute bottom-5 px-36 s:pl-10 s:space-x-1 z-0 flex justify-start space-x-3">
           {nowPlaying.map((movie, index) => (
             <div
               key={index}

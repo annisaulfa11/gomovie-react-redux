@@ -24,7 +24,7 @@ function SearchBar() {
         placeholder="Search for movies..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="border lg:px-4 lg:h-9 rounded-md focus:outline-none s:h-5 s:text-sm s:px-2 s:rounded-md s:w-fit sm:w-40 sm:h-7 lg:w-fit sm:rounded-md"
+        className="ml-5 px-4 h-9 sm:w-44 lg:w-fit s:h-7 s:w-40 s:text-sm rounded-md focus:outline-none"
       />
     </form>
   );
