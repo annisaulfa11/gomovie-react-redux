@@ -37,32 +37,32 @@ export default function HomeBanner() {
   return (
     <>
       <div className="relative movie-banner ">
-        <div className="h-128 relative overflow-hidden s:h-72">
+        <div className="h-128 relative overflow-hidden s:h-100 s:flex s:items-end ">
           <img
             src={`https://image.tmdb.org/t/p/original${currentMovie.backdrop_path}`}
             alt={currentMovie.original_title}
-            className="w-full h-128 absolute transition-opacity duration-1000 ease-in-out opacity-50 s:h-72"
+            className="w-full h-128 absolute transition-opacity duration-1000 ease-in-out opacity-50  s:h-100 s:object-cover"
             key={currentMovie.backdrop_path}
             onLoad={(e) => (e.target.style.opacity = 1)}
           />
-          <div className="relative flex flex-col radial-gradient h-fit lg:mx-28 justify-center s:mx-6 s:my-20 s:p-3 s:w-2/3 sm:my-28 sm:w-4/5 sm:mx-8 lg:my-32 w-1/2 p-8 text-white z-20 transition-opacity duration-700 ease-in-out">
-            <h2 className="text-3xl font-bold mb-5 s:text-sm transition-transform duration-1000 transform ease-in-out ">
+          <div className="relative flex flex-col h-fit lg:mx-28 justify-center s:m-auto s:text-center s:p-3 s:w-2/3 sm:my-28 sm:w-4/5 sm:mx-8 lg:my-32 w-1/2 p-8 s:h-80 s:justify-end s:items-center text-white z-20 transition-opacity duration-700 ease-in-out">
+            <h2 className="text-3xl font-bold mb-5 s:text-2xl transition-transform duration-1000 transform ease-in-out ">
               {currentMovie.original_title}
             </h2>
-            <p className="font-semibold text-pretty s:text-s transition-opacity duration-1000 ease-in-out">
+            <p className=" text-pretty s:text-sm s:text-ellipsis s:line-clamp-4 transition-opacity duration-1000 ease-in-out">
               {currentMovie.overview}
             </p>
             <Link
               key={currentMovie.id}
               to={`/gomovie-react-redux/movie/${currentMovie.id}`}
             >
-              <button className="s:px-3 s:py-1 s:text-s bg-blue-600 px-5 py-2 w-fit mt-5 rounded-md font-bold">
+              <button className="s:px-3 s:py-2 s:text-sm s:w-56 bg-blue-600 px-5 py-2 w-fit mt-5 rounded-md font-bold">
                 Watch Now
               </button>
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-5 px-36 s:pl-10 s:space-x-1 z-0 flex justify-start space-x-3">
+        <div className="absolute bottom-5 sm:pl-36 s:space-x-1 z-0 flex justify-start space-x-3 s:justify-center s:w-full">
           {nowPlaying.map((movie, index) => (
             <div
               key={index}

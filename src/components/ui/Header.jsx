@@ -9,95 +9,118 @@ export default function Header() {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  const handleLinkClick = () => {
-    setIsDropdownOpen(false);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 30) {
-        setBgColor("bg-gray-900");
+        setBgColor("bg-black");
       } else {
-        setBgColor("bg-gradient-to-b from-slate-900");
+        setBgColor("bg-gradient-to-b from-black");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup listener on unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty array ensures this effect runs only once
+  }, []);
 
   return (
-    <>
-      <header
-        className={`fixed z-50 top-0 left-0 right-0 py-3 px-12 s:px-5 ${bgColor}`}
-      >
-        <nav className="flex w-full items-center justify-between">
-          <div className="lg:mr-20 s:mr-5 sm:mr-10">
-            <h1 className="text-2xl font-bold text-blue-500 s:text-sm">
-              GOMOVIE
-            </h1>
-          </div>
-          <div className="hidden s:flex sm:flex  md:hidden w-full">
-            <button
-              className="text-white "
-              onClick={toggleDropdown}
-            >
-              ☰
-            </button>
-          </div>
-          <ul className={`md:flex w-full gap-x-5 text-white s:hidden sm:hidden`}>
-            <li>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                Series
-              </Link>
-            </li>
-            <li>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                Movies
-              </Link>
-            </li>
-            <li>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                New & Popular
-              </Link>
-            </li>
-          </ul>
+    <header
+      className={`fixed z-50 top-0 left-0 right-0 py-6 px-20 h-20 items-center s:px-6 ${bgColor} transition-colors duration-300`}
+    >
+      <nav className="flex justify-between items-center">
+        <div className="text-2xl font-extrabold text-blue-500 lg:mr-20 s:mr-5 sm:mr-10">
+          GOMOVIE
+        </div>
+
+        <div className="lg:hidden">
+          <button
+            className="text-white text-2xl focus:outline-none"
+            onClick={toggleDropdown}
+          >
+            ☰
+          </button>
+        </div>
+
+        {/* Navigation menu for larger screens */}
+        <ul className="hidden lg:flex lg:items-center sm:gap-x-5 text-white">
+          <li>
+            <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+              Movies & Shows
+            </Link>
+          </li>
+          <li>
+            <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+              Support
+            </Link>
+          </li>
+          <li>
+            <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+              Subscription
+            </Link>
+          </li>
+        </ul>
+
+        {/* SearchBar for larger screens */}
+        <div className="hidden lg:block">
           <SearchBar />
-        </nav>
-        {isDropdownOpen && (
-          <ul className="block w-full text-white bg-gray-900 mt-2">
-            <li className="py-2 px-4" onClick={handleLinkClick}>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
+        </div>
+      </nav>
+
+      {/* Dropdown menu for small screens */}
+      {isDropdownOpen && (
+        <div className="mt-4  lg:hidden   items-end flex flex-col">
+          <ul className="flex flex-col text-center text-white w-52 bg-black rounded-lg items-center">
+            <li className="py-2 ">
+              <Link
+                to="/gomovie-react-redux"
+                className="block px-4 hover:text-blue-400"
+                onClick={toggleDropdown}
+              >
                 Home
               </Link>
             </li>
-            <li className="py-2 px-4" onClick={handleLinkClick}>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                Series
+            <li className="py-2 ">
+              <Link
+                to="/gomovie-react-redux"
+                className="block px-4 hover:text-blue-400"
+                onClick={toggleDropdown}
+              >
+                Movies & Shows
               </Link>
             </li>
-            <li className="py-2 px-4" onClick={handleLinkClick}>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                Movies
+            <li className="py-2 ">
+              <Link
+                to="/gomovie-react-redux"
+                className="block px-4 hover:text-blue-400"
+                onClick={toggleDropdown}
+              >
+                Support
               </Link>
             </li>
-            <li className="py-2 px-4" onClick={handleLinkClick}>
-              <Link to="/gomovie-react-redux" className="hover:text-blue-400">
-                New & Popular
+            <li className="py-2">
+              <Link
+                to="/gomovie-react-redux"
+                className="block px-4 hover:text-blue-400"
+                onClick={toggleDropdown}
+              >
+                Subscription
               </Link>
             </li>
+            <div className="py-2 flex s:ml-0">
+            <SearchBar />
+          </div>
           </ul>
-        )}
-      </header>
-    </>
+          
+        </div>
+      )}
+    </header>
   );
 }

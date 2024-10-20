@@ -1,14 +1,14 @@
 // src/App.jsx
 import HomeBanner from "./HomeBanner";
-import Header from "./ui/Header";
 import Popular from "./Popular";
 import TopRated from "./TopRated";
+import Genre from "./Genre";
 
 function App() {
   return (
     <div>
-      <Header />
       <HomeBanner />
+      <Genre />
       <Popular />
       <TopRated />
     </div>

@@ -30,7 +30,7 @@ export default function MovieDetails() {
   const currentVideo = videos[selectedVideo];
 
   return (
-    <div className="bg-black px-12 pt-20 pb-2 s:px-6">
+    <div className=" px-12 pt-20 pb-2 s:px-6">
       <div className="lg:flex justify-between s:flex-col">
         {currentVideo && (
           <iframe
@@ -72,10 +72,10 @@ export default function MovieDetails() {
           </ul>
         </div>
       </div>
-      <div className="text-white my-5 py-5 bg-slate-900 px-5 s:flex-col lg:flex">
+      <div className="text-white my-5 py-5 bg-black-600 px-5 s:flex-col lg:flex rounded-md outline outline-black-200 outline-1 ">
         <img
           src={`https://image.tmdb.org/t/p/w200${movieDetail.poster_path}`}
-          className="s:w-28 sm:w-36 lg:w-fit"
+          className="s:w-28 sm:w-36 lg:w-fit rounded-md"
         ></img>
         <div className="lg:ml-10 lg:text-lg s:ml-0 s:mt-4 s:text-sm sm:ml-0 sm:mt-4 flex  flex-col gap-y-3">
           <h1 className=" text-3xl font-bold s:text-sm mb-5 s:mb-1 ">{movieDetail.title}</h1>

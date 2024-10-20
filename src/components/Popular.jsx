@@ -69,19 +69,29 @@ export default function Popular() {
 
   return (
     <>
-      <div className=" bg-black px-12 py-7 overflow-y-hidden s:px-6 s:py-3">
+      <div className="px-20 py-10 overflow-y-hidden s:px-6 ">
         <section>
           <div>
-            <h3 className="text-3xl font-bold mb-5 text-white s:text-sm">
+            <h3 className="text-3xl font-bold mb-5 text-white s:text-2xl">
               Popular Movies
             </h3>
             {showLeftButton && (
               <div className="relative  ">
                 <button
                   onClick={scrollLeft}
-                  className=" absolute s:top-14 top-32 -left-6 bg-slate-800 py-3 px-5 rounded-full text-white"
+                  className=" absolute s:top-24 top-32 -left-6 bg-slate-800 py-3 px-5 rounded-full text-white"
                 >
                   &#10094;
+                </button>
+              </div>
+            )}
+            {showRightButton && (
+              <div className="relative">
+                <button
+                  onClick={scrollRight}
+                  className="s:top-24 absolute -right-6 top-32 bg-slate-800 py-3 px-5 rounded-full text-white"
+                >
+                  &#10095;
                 </button>
               </div>
             )}
@@ -94,7 +104,7 @@ export default function Popular() {
                 popularMovie.map((movie) => (
                   <Link key={movie.id} to={`/gomovie-react-redux/movie/${movie.id}`}>
                     <img
-                      className="rounded-md max-w-none s:w-28"
+                      className="rounded-md max-w-none w-48 s:w-40"
                       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                       alt={movie.title}
                     ></img>
@@ -104,16 +114,7 @@ export default function Popular() {
                 <p></p>
               )}
             </div>
-            {showRightButton && (
-              <div className="relative">
-                <button
-                  onClick={scrollRight}
-                  className="s:-top-28 absolute -right-6 -top-44 bg-slate-800 py-3 px-5 rounded-full text-white"
-                >
-                  &#10095;
-                </button>
-              </div>
-            )}
+
           </div>
         </section>
       </div>
